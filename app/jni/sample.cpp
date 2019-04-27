@@ -40,6 +40,8 @@ extern "C"
         // OpenCV process
         cvtColor(m_src, m_int, COLOR_RGBA2RGB);
         bilateralFilter(m_int, m_dst, 15, 80, 80, BORDER_DEFAULT);
+        flip(m_dst, m_int, 1);
+        cvtColor(m_int, m_dst, COLOR_RGB2GRAY);
         cvtColor(m_dst, m_src, COLOR_RGB2RGBA);
 
         // Pick out arrangement from Mat
